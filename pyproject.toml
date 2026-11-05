@@ -1,0 +1,21 @@
+[project]
+name = "hn-tech-digest"
+version = "0.1.0"
+description = "One-shot Mistral workflow: HackerNews tech digest emailed to your Gmail with an MP3 audio briefing."
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "mistralai-workflows[mistralai]>=3.10",
+    "pydantic>=2.14.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1.post1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["apps/worker/src"]
+asyncio_mode = "auto"
+testpaths = ["tests"]
